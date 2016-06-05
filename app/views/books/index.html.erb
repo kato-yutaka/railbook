@@ -2,6 +2,9 @@
 
 <h1>Listing Books</h1>
 
+<%= link_to "検索"    , search_books_path %>
+<%= link_to "リセット", books_path %>
+
 <table>
   <thead>
     <tr>
@@ -28,7 +31,7 @@
         <td><%= book.cd %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: "「#{book.title}」を削除しますか?"} %></td>
       </tr>
     <% end %>
   </tbody>
